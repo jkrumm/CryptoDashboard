@@ -1,9 +1,12 @@
 import React from "react";
+import {ThemeProvider} from "styled-components";
 import "./App.css";
+import theme from './theme';
 import logo from "./logo.svg";
 
 const App: React.FC = () => {
     return (
+        <ThemeProvider theme={theme}>
         <div className="App">
 
             <header className="App-header">
@@ -20,7 +23,7 @@ const App: React.FC = () => {
                     Learn React
                 </a>
             </header>
-        </div>
+        </div></ThemeProvider>
     );
 };
 
