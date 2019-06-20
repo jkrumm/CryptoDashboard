@@ -1,0 +1,5 @@
+{
+    "extends": "@blueprintjs/tslint-config",
+    "no-implicit-dependencies": false,
+    "no-unused-expression": false
+}
