@@ -1,58 +1,41 @@
 {
   "name": "insight-web",
-  "version": "0.1.0",
-  "private": true,
+  "homepage": "",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
   "dependencies": {
-    "@blueprintjs/tslint-config": "^1.8.0",
-    "@types/jest": "24.0.14",
-    "@types/node": "12.0.8",
-    "@types/react": "16.8.20",
-    "@types/react-dom": "16.8.4",
-    "node-sass": "^4.12.0",
+    "@material-ui/core": "^3.0.1",
+    "@material-ui/icons": "^3.0.1",
+    "date-fns": "^1.30.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "i18next": "^11.6.0",
+    "i18next-xhr-backend": "^1.5.1",
+    "lodash": "^4.17.10",
+    "query-string": "6.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "^3.0.1",
-    "typescript": "^3.5.2"
+    "react-i18next": "^7.11.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "recompose": "^0.30.0",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5",
+    "redux-form": "^7.4.2",
+    "redux-saga": "^0.16.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "sb": "yarn storybook",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' && stylelint '**/*.scss'",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
-  },
-  "pre-commit": [
-    "precommit-msg",
-    "lint"
-  ],
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^5.1.8",
-    "@storybook/addon-links": "^5.1.8",
-    "@storybook/addons": "^5.1.8",
-    "@storybook/react": "^5.1.8",
-    "pre-commit": "^1.2.2",
-    "stylelint": "^9.8.0",
-    "stylelint-config-palantir": "^4.0.0",
-    "stylelint-scss": "^3.8.0",
-    "tslint": "^5.17.0"
+    "lint": "eslint src --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "upgrade": "yarn upgrade-interactive"
   }
 }

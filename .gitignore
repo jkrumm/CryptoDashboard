@@ -17,12 +17,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
 
 # Created by https://www.gitignore.io/api/node
 # Edit at https://www.gitignore.io/?templates=node
@@ -31,9 +28,6 @@ yarn-error.log*
 # Logs
 logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
 # Runtime data
 pids
@@ -151,13 +145,9 @@ gen/
 # Logs and databases #
 ######################
 log/
-*.log
 *.sql
 *.sqlite
-
 # OS generated files #
-######################
-.DS_Store
 .DS_Store?
 ehthumbs.db
 Icon?
