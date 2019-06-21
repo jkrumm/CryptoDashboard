@@ -1,0 +1,70 @@
+@import "../styles/variables";
+
+//@font-face {
+//  font-family: 'book';
+//  src: url('../../static/fonts/Blender-book-webfont.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//@font-face {
+//  font-family: 'medium';
+//  src: url('../static/fonts/Blender-medium-webfont.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+//@font-face {
+//  font-family: 'bold';
+//  src: url('../static/fonts/Blender-bold-webfont.woff') format('woff');
+//  font-weight: normal;
+//  font-style: normal;
+//}
+
+body {
+  margin: 0;
+  background-color: $pt-dark-app-background-color;
+  font-family: $pt-font-family;
+  font-size: 15px;
+  //-webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+}
+
+//code {
+//  font-family: "source-code-pro",
+//  "Menlo",
+//  "Monaco",
+//  "Consolas",
+//  "Courier New",
+//    monospace;
+//}
+
+//  ###############  //
+//   GLOBAL  FIXES   //
+//  ###############  //
+
+.bp3-tab-list .bp3-tab {
+  font-size: 15px;
+}
+
+button {
+  span {
+    pointer-events: none;
+  }
+
+  &:focus {
+    border: 1px solid $blue3;
+  }
+}
+
+fieldset {
+  display: block;
+  margin: 0;
+  border: none;
+  padding: 0;
+  margin-inline-end: 0;
+  margin-inline-start: 0;
+  min-inline-size: unset;
+  padding-block-end: 0;
+  padding-block-start: 0;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+}
