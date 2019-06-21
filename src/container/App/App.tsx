@@ -1,4 +1,5 @@
 import React from "react";
+import {MobxRouter} from 'mobx-router';
 import {Button} from "@blueprintjs/core";
 import "./App.scss";
 
@@ -12,6 +13,7 @@ export const App: React.FC = () => {
                 <a className="app-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
                     Learn React
                 </a>
+                <MobxRouter/>
             </header>
         </div>
     );
