@@ -1,7 +1,7 @@
-import {RouterStore} from 'mobx-router';
+import { RouterStore } from "mobx-router";
+import { CounterStore } from "./CounterStore";
 
-const store = {
-    router: new RouterStore()
+export const store = {
+    counterStore: new CounterStore(),
+    router: new RouterStore(),
 };
-
-export default store;

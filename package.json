@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@blueprintjs/core": "^3.16.0",
+    "@blueprintjs/core": "^3.16.2",
     "@blueprintjs/datetime": "^3.10.0",
     "@blueprintjs/icons": "^3.9.0",
     "@blueprintjs/select": "^3.8.1",
@@ -18,7 +18,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
-    "typescript": "^3.5.2"
+    "typelevel-ts": "^0.3.5",
+    "typescript": "^3.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -52,22 +53,23 @@
   },
   "devDependencies": {
     "@blueprintjs/tslint-config": "^1.8.0",
-    "@storybook/addon-actions": "^5.1.8",
-    "@storybook/addon-links": "^5.1.8",
-    "@storybook/addons": "^5.1.8",
-    "@storybook/react": "^5.1.8",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
     "@types/date-fns": "^2.6.0",
     "@types/history": "^4.7.2",
-    "@types/jest": "24.0.14",
+    "@types/jest": "24.0.15",
     "@types/lodash": "^4.14.134",
-    "@types/node": "12.0.8",
+    "@types/node": "12.0.10",
     "@types/react": "^16.8.22",
     "@types/react-dom": "16.8.4",
     "@types/react-router": "^5.0.2",
     "pre-commit": "^1.2.2",
-    "stylelint": "^9.8.0",
+    "stylelint": "^10.1.0",
     "stylelint-config-palantir": "^4.0.0",
     "stylelint-scss": "^3.8.0",
-    "tslint": "^5.17.0"
+    "tslint": "^5.18.0",
+    "typescript-tslint-plugin": "^0.5.2"
   }
 }

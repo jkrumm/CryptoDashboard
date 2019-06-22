@@ -1,34 +1,35 @@
-import React from 'react';
+import React from "react";
 
-//models
-import {Route} from 'mobx-router';
+// models
+import { Route } from "mobx-router";
+import { Home } from "../container/Home/Home";
+// import { CounterStore } from "../stores/CounterStore";
 
-//components
-import {Home} from '../container/Home/Home';
-import {Profile} from '../container/Profile/Profile';
-import {CoinPage} from "../container/CoinPage/CoinPage";
+// components
+import { CoinPage } from "../container/CoinPage/CoinPage";
+// import { Home } from "../container/Home/Home";
+import { Profile } from "../container/Profile/Profile";
 
-const routes = {
+export const routes = {
+    coinPage: new Route({
+        component: <CoinPage />,
+        path: "/coin/",
+    }),
     home: new Route({
-        path: '/',
-        component: <Home/>
+        component: <Home />,
+        path: "/",
     }),
     profile: new Route({
-        path: '/profile/:tab',
-        component: <Profile/>,
+        component: <Profile />,
+        path: "/profile/:tab",
         onEnter: () => {
-            console.log('entering user profile!');
+            console.log("entering user profile!");
         },
         beforeExit: () => {
-            console.log('exiting user profile!');
+            console.log("exiting user profile!");
         },
         onParamsChange: (route, params, store) => {
-            console.log('params changed to', params);
-        }
-    }),
-    coinPage: new Route({
-        path: '/coin/',
-        component: <CoinPage/>
+            console.log("params changed to", params);
+        },
     }),
 };
-export default routes;
