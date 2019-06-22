@@ -1,0 +1,37 @@
+aside.sidebar {
+  display: block;
+  overflow: hidden;
+
+  .sidebar-content-wrapper {
+    display: none;
+  }
+
+  .sidebar-nav-wrapper {
+    display: block;
+  }
+}
+
+aside.sidebar ul.sidebar-nav {
+  display: block;
+  margin: 0;
+  padding: 0;
+
+  li {
+    position: relative;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    list-style: none;
+
+    &:hover {
+      background-color: #384b59;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

@@ -5,6 +5,7 @@
     "rules": {
         "jsx-no-lambda": false,
         "member-access": [false, "no-public"],
-        "max-classes-per-file": false
+        "max-classes-per-file": false,
+        "no-console": false
     }
 }
