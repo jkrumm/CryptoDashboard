@@ -1,7 +1,7 @@
 import { Classes, H1 } from "@blueprintjs/core";
-// import { MobxRouter } from "mobx-router";
+import { MobxRouter } from "mobx-router";
 import React, { Component } from "react";
-import { Home } from "../Home/Home";
+import { router } from "../../stores/store";
 import "./App.scss";
 
 export class App extends Component {
@@ -24,7 +24,7 @@ export class App extends Component {
                 <main className={"main-grid-container " + main}>
                     <div className="navigation-wrapper">TEST</div>
                     <div className="content-wrapper">
-                        <Home />
+                        <MobxRouter store={router} />
                     </div>
                     <div className="sidebar-wrapper">TEST</div>
                 </main>
