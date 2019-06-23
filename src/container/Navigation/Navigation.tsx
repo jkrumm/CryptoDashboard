@@ -1,6 +1,10 @@
 import React from "react";
 
-export class Navigation extends React.Component {
+interface IContainerProps {
+    collapsed: boolean;
+}
+
+export class Navigation extends React.Component<IContainerProps> {
     render() {
         return (
             <nav>

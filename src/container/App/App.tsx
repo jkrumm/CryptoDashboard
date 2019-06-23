@@ -1,7 +1,7 @@
 import { Classes, H1 } from "@blueprintjs/core";
 import { inject, observer } from "mobx-react";
 import { MobxRouter } from "mobx-router";
-import React, { Component } from "react";
+import React from "react";
 import { ILayoutStore } from "../../stores/LayoutStore";
 import { router } from "../../stores/store";
 import { Navigation } from "../Navigation/Navigation";
@@ -9,14 +9,22 @@ import "./App.scss";
 import { Sidebar } from "../Sidebar/Sidebar";
 
 interface IContainerProps {
-    layoutStore?: ILayoutStore;
+    layoutStore?: ILayoutStore | any;
 }
 
 @inject("layoutStore")
 @observer
-export class App extends Component<IContainerProps> {
+export class App extends React.Component<IContainerProps> {
     public render() {
-        // const { mainGrid } = this.props.layoutStore;
+        const { 
+            navCollapsed, 
+            sidebarCollapsed, 
+            mainGrid, 
+            toogleSidebarCollapse,
+            sidebarTab,
+            changeSidebarTab
+        } = this.props.layoutStore;
+
         return (
             <div className={`${Classes.DARK} app`}>
                 <header className="app-header">
@@ -27,14 +35,21 @@ export class App extends Component<IContainerProps> {
                     <div className="head-bar">Bar</div>
                     <div className="head-icon">Icons</div>
                 </header>
-                <main className={"main-grid-container"}>
+                <main className={"main-grid-container " + mainGrid}>
                     <div className="navigation-wrapper">
-                        <Navigation />
+                        <Navigation collapsed={navCollapsed}/>
                     </div>
                     <div className="content-wrapper">
                         <MobxRouter store={router} />
                     </div>
-                    <div className="sidebar-wrapper"><Sidebar/></div>
+                    <div className="sidebar-wrapper">
+                        <Sidebar 
+                            collapsed={sidebarCollapsed} 
+                            toogleCollapse={toogleSidebarCollapse}
+                            sidebarTab={sidebarTab}
+                            changeSidebarTab={changeSidebarTab}
+                        />
+                    </div>
                 </main>
             </div>
         );

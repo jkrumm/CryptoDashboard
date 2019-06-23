@@ -24,8 +24,8 @@ body {
   background-color: $pt-dark-app-background-color;
   font-family: $pt-font-family;
   font-size: 15px;
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
 }
 
 //code {

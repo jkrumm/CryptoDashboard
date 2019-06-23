@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import { Tooltip, Icon, Position } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 
+interface ISidebarNav {
+  sidebarTab: string;
+  collapsed: boolean;
+  changeSidebarTab(tab: string): void;
+}
+
 const SidebarMenuItems = [
   {name: 'Favorites', iconId: IconNames.STAR},
   {name: 'Search', iconId: IconNames.SEARCH},
@@ -10,7 +16,7 @@ const SidebarMenuItems = [
   {name: 'ToDo', iconId: IconNames.CONFIRM},
 ];
 
-export function SidebarNav() {
+export function SidebarNav(props: ISidebarNav) {
   return (
     <ul className="sidebar-nav">
         {SidebarMenuItems.map(
@@ -19,6 +25,8 @@ export function SidebarNav() {
               key={index} 
               name={item.name} 
               iconId={item.iconId}
+              changeSidebarTab={props.changeSidebarTab}
+              active={item.name === props.sidebarTab && props.collapsed === true ? true : false}
             />
         )}
     </ul>
@@ -28,18 +36,29 @@ export function SidebarNav() {
 interface ISidebarButton {
   name: string;
   iconId: any;
+  active: true | false;
+  changeSidebarTab(tab: string): void;
 }
 
- class SidebarButton extends Component<ISidebarButton> {
-   render() {
-     const {name, iconId } = this.props;
+class SidebarButton extends Component<ISidebarButton> {
+  render() {
+    const {name, iconId, active, changeSidebarTab } = this.props;
     return (
       <>
         <Tooltip 
-        content={name}
-        inheritDarkTheme
-        position={Position.TOP_LEFT}>
-          <li><Icon icon={iconId} iconSize={16}/></li>
+          content={name}
+          inheritDarkTheme
+          position={Position.TOP_LEFT}
+        >
+          <li 
+            className={active === true ? 'active' : ''}
+            onClick={() => changeSidebarTab(name)}
+          >
+            <Icon 
+              icon={iconId}
+              iconSize={16}
+            />
+          </li>
         </Tooltip>
       </>
     )

@@ -1,29 +1,82 @@
+@import "../../styles/variables";
+
 aside.sidebar {
-  display: block;
+  display: flex;
   overflow: hidden;
 
   .sidebar-content-wrapper {
     display: none;
+    width: 0;
+    height: calc(100vh - 70px);
+    transition: width 500ms;
   }
 
   .sidebar-nav-wrapper {
-    display: block;
+    position: relative;
+    float: right;
+    border-left: none;
+    max-width: 60px;
+    height: calc(100vh - 70px);
+  }
+
+  .sidebar-collapse {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-top: 1px solid $dark-gray2;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      background-color: #384b59;
+    }
+
+    .sidebar-collapse-inner {
+      width: 60px;
+      height: 60px;
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.sidebar-collapsed {
+    .sidebar-collapse:hover {
+      border-left: 1px solid $dark-gray2;
+    }
+
+    .sidebar-content-wrapper {
+      display: block;
+      width: 300px;
+    }
+
+    .sidebar-nav-wrapper {
+      border-left: 1px solid $dark-gray2;
+    }
   }
 }
 
 aside.sidebar ul.sidebar-nav {
   display: block;
   margin: 0;
-  padding: 0;
+  max-width: 60px;
+  padding: 1px 0 0 0;
 
   li {
     position: relative;
+    margin-bottom: -6px;
     cursor: pointer;
     width: 60px;
     height: 60px;
     list-style: none;
 
-    &:hover {
+    &:hover,
+    &.active {
       background-color: #384b59;
     }
 

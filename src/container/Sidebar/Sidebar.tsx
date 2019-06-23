@@ -1,12 +1,51 @@
 import React from 'react';
 import { SidebarNav } from './SidebarNav';
 import "./Sidebar.scss";
+import { Tooltip, Icon, Position } from '@blueprintjs/core';
+import { IconNames } from '@blueprintjs/icons';
 
-export function Sidebar() {
+interface ISidebarProps {
+  collapsed: boolean;
+  toogleCollapse(): void;
+  sidebarTab: string;
+  changeSidebarTab(tab: string): void;
+}
+
+export function Sidebar(props: ISidebarProps) {
+  const {
+    collapsed, 
+    toogleCollapse, 
+    sidebarTab,
+    changeSidebarTab
+  } = props;
   return (
-    <aside className="sidebar">
-      <div className="sidebar-content-wrapper"></div>
-      <div className="sidebar-nav-wrapper"><SidebarNav/></div>
+    <aside className={collapsed ? "sidebar sidebar-collapsed" : "sidebar"}>
+      <div 
+        className="sidebar-content-wrapper"
+      >
+        {sidebarTab}
+      </div>
+      <div className="sidebar-nav-wrapper">
+        <SidebarNav 
+          sidebarTab={sidebarTab}
+          collapsed={collapsed}
+          changeSidebarTab={changeSidebarTab}
+        />
+        <div className="sidebar-collapse" onClick={toogleCollapse}>
+          <Tooltip 
+              content={collapsed ? 'Close Sidebar' : 'Open Sidebar'}
+              inheritDarkTheme
+              position={Position.TOP_LEFT}
+            >
+              <div className="sidebar-collapse-inner">
+                  <Icon 
+                    icon={collapsed ? IconNames.DOUBLE_CHEVRON_RIGHT : IconNames.DOUBLE_CHEVRON_LEFT} 
+                    iconSize={20}
+                  />
+              </div>
+            </Tooltip>
+          </div>
+      </div>
     </aside>
   );
 }
