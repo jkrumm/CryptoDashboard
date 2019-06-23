@@ -18,11 +18,10 @@ export function Sidebar(props: ISidebarProps) {
     sidebarTab,
     changeSidebarTab
   } = props;
+
   return (
     <aside className={collapsed ? "sidebar sidebar-collapsed" : "sidebar"}>
-      <div 
-        className="sidebar-content-wrapper"
-      >
+      <div className="sidebar-content-wrapper">
         {sidebarTab}
       </div>
       <div className="sidebar-nav-wrapper">
@@ -39,7 +38,11 @@ export function Sidebar(props: ISidebarProps) {
             >
               <div className="sidebar-collapse-inner">
                   <Icon 
-                    icon={collapsed ? IconNames.DOUBLE_CHEVRON_RIGHT : IconNames.DOUBLE_CHEVRON_LEFT} 
+                    icon={
+                      collapsed ? 
+                      IconNames.DOUBLE_CHEVRON_RIGHT : 
+                      IconNames.DOUBLE_CHEVRON_LEFT
+                    } 
                     iconSize={20}
                   />
               </div>

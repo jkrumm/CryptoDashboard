@@ -16,11 +16,12 @@ interface IContainerProps {
 @observer
 export class App extends React.Component<IContainerProps> {
     public render() {
-        const { 
-            navCollapsed, 
-            sidebarCollapsed, 
-            mainGrid, 
+        const {
+            navCollapsed,
+            sidebarCollapsed,
+            mainGrid,
             toogleSidebarCollapse,
+            toogleNavCollapse,
             sidebarTab,
             changeSidebarTab
         } = this.props.layoutStore;
@@ -37,7 +38,10 @@ export class App extends React.Component<IContainerProps> {
                 </header>
                 <main className={"main-grid-container " + mainGrid}>
                     <div className="navigation-wrapper">
-                        <Navigation collapsed={navCollapsed}/>
+                        <Navigation 
+                            collapsed={navCollapsed}
+                            toogleCollapse={toogleNavCollapse}
+                        />
                     </div>
                     <div className="content-wrapper">
                         <MobxRouter store={router} />

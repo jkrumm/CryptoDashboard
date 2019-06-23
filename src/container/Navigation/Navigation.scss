@@ -1,0 +1,101 @@
+@import "../../styles/variables";
+
+.navigation {
+  display: block;
+  position: relative;
+  width: 60px;
+  height: calc(100vh - 70px);
+
+  ul {
+    display: block;
+    margin: 0;
+    max-width: 60px;
+    padding: 1px 0 0 0;
+  }
+
+  li.navbar-list {
+    display: flex;
+    position: relative;
+    margin-bottom: -6px;
+    cursor: pointer;
+    width: 60px;
+    list-style: none;
+
+    &:hover,
+    &.active {
+      border-right: 1px solid $dark-gray2;
+      background-color: #384b59;
+    }
+
+    .navbar-icon {
+      width: 60px;
+      height: 60px;
+
+      span {
+        @include absolute-center;
+      }
+    }
+
+    > .navbar-title {
+      display: none;
+      margin-left: 5px;
+      padding-top: 18px;
+
+      h4 {
+        font-weight: 400;
+      }
+    }
+
+    &.collapsed {
+      width: 180px;
+
+      .navbar-title {
+        display: inline;
+      }
+
+      .navbar-icon span {
+        left: 30px;
+      }
+    }
+  }
+
+  &.collapsed {
+    width: 180px;
+
+    .navigation-collapse {
+      width: 180px;
+
+      &:hover {
+        border-right: 1px solid $dark-gray2;
+      }
+
+      .navigation-collapse-inner {
+        width: 180px;
+      }
+    }
+  }
+
+  .navigation-collapse {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid $dark-gray2;
+    border-right: 1px solid $dark-gray2;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+
+    &:hover {
+      background-color: #384b59;
+    }
+
+    .navigation-collapse-inner {
+      width: 60px;
+      height: 60px;
+    }
+
+    span {
+      @include absolute-center;
+    }
+  }
+}

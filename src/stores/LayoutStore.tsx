@@ -1,12 +1,11 @@
 import { action, observable } from "mobx";
 
-// type mainGridVal = "" | "left" | "right" | "both";
-
 export interface ILayoutStore {
-    mainGrid: string;
+    mainGrid: string | "" | "left" | "right" | "both";
     navCollapsed: boolean;
     sidebarCollapsed: boolean;
     toogleSidebarCollapse(): void;
+    toogleNavCollapse(): void;
     sidebarTab: string;
     changeSidebarTab(tab: string): void;
 }
@@ -31,9 +30,20 @@ export class LayoutStore implements ILayoutStore {
     }
 
     @action.bound
-    changeSidebarTab(tab) {
-        this.sidebarCollapsed = true;
-        this.mainGrid =  getMainGrid(this.navCollapsed, true);
-        this.sidebarTab = tab;
+    toogleNavCollapse() {
+        this.mainGrid =  getMainGrid(!this.navCollapsed, this.sidebarCollapsed);
+        this.navCollapsed = !this.navCollapsed;
+    }
+
+    @action.bound
+    changeSidebarTab(tab: string) {
+        if (tab === this.sidebarTab && this.sidebarCollapsed === true) {
+            this.sidebarCollapsed = false;
+            this.mainGrid =  getMainGrid(this.navCollapsed, false);
+        } else {
+            this.sidebarCollapsed = true;
+            this.mainGrid =  getMainGrid(this.navCollapsed, true);
+            this.sidebarTab = tab;
+        }
     }
 }

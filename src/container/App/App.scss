@@ -5,13 +5,13 @@ header.app-header {
   grid-template-areas: ". . . .";
   grid-template-columns: 150px 300px 1fr 100px;
   grid-template-rows: 1fr;
+  position: relative;
   z-index: 100;
   box-shadow: $pt-dark-elevation-shadow-1;
   background-color: $dark-gray3;
   min-height: 70px;
 
   > div {
-    // border-right: 1px solid $dark-gray2;
     border-bottom: 1px solid $dark-gray2;
     background-color: $dark-gray3;
     transition: background-color 400ms;
@@ -61,10 +61,11 @@ main.main-grid-container {
   grid-template-areas: ". . .";
   grid-template-columns: 60px 1fr 60px;
   grid-template-rows: 1fr;
+  z-index: 99;
   height: calc(100vh - 70px);
 
   &.left {
-    grid-template-columns: 240px 1fr 60px;
+    grid-template-columns: 180px 1fr 60px;
   }
 
   &.right {
@@ -72,7 +73,7 @@ main.main-grid-container {
   }
 
   &.both {
-    grid-template-columns: 240px 1fr 360px;
+    grid-template-columns: 180px 1fr 360px;
   }
 
   > .content-wrapper {
