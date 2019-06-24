@@ -5,7 +5,7 @@ import { LayoutStore } from "./LayoutStore";
 export const router = { router: new RouterStore() };
 
 export const store = {
-    counterStore: new CounterStore(),
-    layoutStore: new LayoutStore(),
-    router: router.router,
+	counterStore: new CounterStore(),
+	layoutStore: new LayoutStore(),
+	router: router.router,
 };

@@ -1,7 +1,8 @@
+import { H1 } from "@blueprintjs/core";
 import React from "react";
 
 export const CoinPage: React.FC = () => {
-    return (
-        <h1>CoinPage</h1>
-    );
+	return (
+		<H1>CoinPage</H1>
+	);
 };

@@ -18,43 +18,20 @@ aside.sidebar {
     max-width: 60px;
     height: calc(100vh - 70px);
   }
+}
 
-  .sidebar-collapse {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-top: 1px solid $dark-gray2;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-
-    &:hover {
-      background-color: #384b59;
-    }
-
-    .sidebar-collapse-inner {
-      width: 60px;
-      height: 60px;
-    }
-
-    span {
-      @include absolute-center;
-    }
+aside.sidebar.sidebar-collapsed {
+  .sidebar-collapse:hover {
+    border-left: 1px solid $dark-gray2;
   }
 
-  &.sidebar-collapsed {
-    .sidebar-collapse:hover {
-      border-left: 1px solid $dark-gray2;
-    }
+  .sidebar-content-wrapper {
+    display: block;
+    width: 300px;
+  }
 
-    .sidebar-content-wrapper {
-      display: block;
-      width: 300px;
-    }
-
-    .sidebar-nav-wrapper {
-      border-left: 1px solid $dark-gray2;
-    }
+  .sidebar-nav-wrapper {
+    border-left: 1px solid $dark-gray2;
   }
 }
 
@@ -80,5 +57,28 @@ aside.sidebar ul.sidebar-nav {
     span {
       @include absolute-center;
     }
+  }
+}
+
+aside.sidebar .sidebar-collapse-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-top: 1px solid $dark-gray2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+
+  &:hover {
+    background-color: #384b59;
+  }
+
+  .sidebar-collapse-inner {
+    width: 60px;
+    height: 60px;
+  }
+
+  span {
+    @include absolute-center;
   }
 }

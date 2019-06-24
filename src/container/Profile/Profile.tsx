@@ -1,7 +1,8 @@
+import { H1 } from "@blueprintjs/core";
 import React from "react";
 
 export const Profile: React.FC = () => {
-    return (
-        <h1>Profile</h1>
-    );
+	return (
+		<H1>Profile</H1>
+	);
 };

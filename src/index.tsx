@@ -23,10 +23,10 @@ import "./styles/index.scss";
 startRouter(routes, store);
 
 ReactDOM.render(
-    <Provider {...store}>
-        <App />
-    </Provider>,
-    document.getElementById("root"),
+	<Provider {...store}>
+		<App />
+	</Provider>,
+	document.getElementById("root"),
 );
 
 // If you want your app to work offline and load faster, you can change
