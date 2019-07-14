@@ -6,14 +6,16 @@ import { Header } from "../../components/Header/Header";
 import { Navigation } from "../../components/Navigation/Navigation";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { ILayoutStore } from "../../stores/LayoutStore";
+import { IUserStore } from "../../stores/UserStore";
 import { router } from "../../stores/store";
 import "./App.scss";
 
 interface IContainerProps {
 	layoutStore?: ILayoutStore | any;
+	userStore?: IUserStore | any;
 }
 
-@inject("layoutStore")
+@inject("layoutStore", "userStore")
 @observer
 export class App extends React.Component<IContainerProps> {
 	public render() {
@@ -25,22 +27,37 @@ export class App extends React.Component<IContainerProps> {
 			toogleNavCollapse,
 			sidebarTab,
 			changeSidebarTab,
+			searchNavigation,
+			changeSearchNavigation,
+			isLastVisitedOpen,
+			isFavoritesOpen,
+			isNavOpen,		
+			toogleLastVisitedOpen,
+			toogleFavoritesOpen,
+			toogleNavOpen
 		} = this.props.layoutStore;
+
+		const { name } = this.props.userStore;
 
 		return (
 			<div className={`${Classes.DARK} app`}>
 				<header className="header-wrapper">
-					<Header x="test" />
-					{/* <div className="head-logo">
-							<H1>InSight</H1>
-					</div>
-					<div className="head-search">Search</div>
-					<div className="head-bar">Bar</div>
-					<div className="head-icon">Icons</div> */}
+					<Header x={name} />
 				</header>
 				<main className={"main-grid-container " + mainGrid}>
 					<div className="navigation-wrapper">
-						<Navigation collapsed={navCollapsed} toogleCollapse={toogleNavCollapse} />
+						<Navigation 
+							collapsed={navCollapsed} 
+							toogleCollapse={toogleNavCollapse} 
+							searchNavigation={searchNavigation}
+							changeSearchNavigation={changeSearchNavigation}
+							isLastVisitedOpen={isLastVisitedOpen}
+							isFavoritesOpen={isFavoritesOpen}
+							isNavOpen={isNavOpen}
+							toogleLastVisitedOpen={toogleLastVisitedOpen}
+							toogleFavoritesOpen={toogleFavoritesOpen}
+							toogleNavOpen={toogleNavOpen}
+						/>
 					</div>
 					<div className="content-wrapper">
 						<MobxRouter store={router} />

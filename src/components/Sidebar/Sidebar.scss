@@ -37,9 +37,9 @@ aside.sidebar.sidebar-collapsed {
 
 aside.sidebar ul.sidebar-nav {
   display: block;
-  margin: 0;
+  margin: -1px 0 0 0;
   max-width: 60px;
-  padding: 1px 0 0 0;
+  padding: 0;
 
   li {
     position: relative;
@@ -51,12 +51,32 @@ aside.sidebar ul.sidebar-nav {
 
     &:hover,
     &.active {
-      background-color: #384b59;
+      position: relative;
+      border-top: 1px solid $dark-gray2;
+      border-bottom: 1px solid $dark-gray2;
+      background-color: $menu-item;
+      // background-color: #384b59;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: $menu-item-border-top;
+        width: 60px;
+        height: 1px;
+        content: "";
+      }
     }
 
     span {
       @include absolute-center;
     }
+  }
+
+  &:last-of-type li {
+    margin-top: -1px;
   }
 }
 

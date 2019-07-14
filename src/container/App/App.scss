@@ -1,79 +1,33 @@
 @import "../../styles/variables";
 
-header.app-header {
-  display: grid;
-  grid-template-areas: ". . . .";
-  grid-template-columns: 150px 300px 1fr 100px;
-  grid-template-rows: 1fr;
-  position: relative;
-  z-index: 100;
-  box-shadow: $pt-dark-elevation-shadow-1;
-  background-color: $dark-gray3;
+header.header-wrapper {
+  display: block;
+  min-width: 100vw;
   min-height: 70px;
+}
 
-  > div {
-    border-bottom: 1px solid $dark-gray2;
-    background-color: $dark-gray3;
-    transition: background-color 400ms;
-
-    &:hover {
-      background-color: $dark-gray2;
-    }
-  }
-
-  .head-logo {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    height: 70px;
-    padding: 0 20px;
-
-    h1 {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      margin: 0;
-    }
-  }
-
-  .head-search,
-  .head-bar,
-  .head-icon {
-    padding-top: 25px;
-    text-align: center;
-  }
-
-  //.head-search {
-  //
-  //}
-  //
-  //.head-bar {
-  //
-  //}
-
-  .head-icon {
-    border-right: none;
-  }
+.bp3-button {
+  font-size: 15px;
 }
 
 main.main-grid-container {
   display: grid;
   grid-template-areas: ". . .";
-  grid-template-columns: 60px 1fr 60px;
+  grid-template-columns: 200px 1fr 60px;
   grid-template-rows: 1fr;
   z-index: 99;
   height: calc(100vh - 70px);
 
   &.left {
-    grid-template-columns: 180px 1fr 60px;
+    grid-template-columns: 200px 1fr 60px;
   }
 
   &.right {
-    grid-template-columns: 60px 1fr 360px;
+    grid-template-columns: 200px 1fr 360px;
   }
 
   &.both {
-    grid-template-columns: 180px 1fr 360px;
+    grid-template-columns: 200px 1fr 360px;
   }
 
   > .content-wrapper {
@@ -82,7 +36,7 @@ main.main-grid-container {
 
   > .navigation-wrapper,
   > .sidebar-wrapper {
-    background-color: $dark-gray3;
+    background-color: $nav-sidebar-bg;
   }
 
   > .navigation-wrapper {

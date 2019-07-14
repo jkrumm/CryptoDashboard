@@ -8,6 +8,14 @@ export interface ILayoutStore {
 	toogleSidebarCollapse(): void;
 	toogleNavCollapse(): void;
 	changeSidebarTab(tab: string): void;
+	searchNavigation: string;
+	changeSearchNavigation(val: string): void;
+	isLastVisitedOpen: boolean;
+	isFavoritesOpen: boolean;
+	isNavOpen: boolean;
+	toogleLastVisitedOpen(): void;
+	toogleFavoritesOpen(): void;
+	toogleNavOpen(): void;
 }
 
 function getMainGrid(nav: boolean, sidebar: boolean) {
@@ -22,6 +30,10 @@ export class LayoutStore implements ILayoutStore {
 	@observable navCollapsed = false;
 	@observable sidebarCollapsed = false;
 	@observable sidebarTab = "Favorites";
+	@observable searchNavigation = "";
+	@observable isLastVisitedOpen = true;
+	@observable isFavoritesOpen = true;
+	@observable isNavOpen = true;
 
 	@action.bound
 	toogleSidebarCollapse() {
@@ -45,5 +57,25 @@ export class LayoutStore implements ILayoutStore {
 			this.mainGrid =  getMainGrid(this.navCollapsed, true);
 			this.sidebarTab = tab;
 		}
+	}
+
+	@action.bound
+	changeSearchNavigation(val: string) {
+		this.searchNavigation = val;
+	}
+
+	@action.bound
+	toogleLastVisitedOpen() {
+		this.isLastVisitedOpen = !this.isLastVisitedOpen;
+	}
+
+	@action.bound
+	toogleFavoritesOpen() {
+		this.isFavoritesOpen = !this.isFavoritesOpen;
+	}
+
+	@action.bound
+	toogleNavOpen() {
+		this.isNavOpen = !this.isNavOpen;
 	}
 }

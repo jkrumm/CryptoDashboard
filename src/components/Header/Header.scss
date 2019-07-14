@@ -1,2 +1,67 @@
 @import "../../styles/variables";
 
+.header {
+  display: grid;
+  grid-template-areas: ". . . .";
+  grid-template-columns: 170px 300px 1fr 100px;
+  grid-template-rows: 1fr;
+  position: relative;
+  z-index: 100;
+  border-bottom: 1px solid $dark-gray2;
+  background-color: $dark-gray3;
+  min-height: 70px;
+
+  > div {
+    background-color: $dark-gray3;
+    transition: background-color 400ms;
+
+    &:hover {
+      background-color: $dark-gray2;
+    }
+  }
+
+  .head-logo {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: 70px;
+
+    img {
+      position: relative;
+      top: 10px;
+      left: 5px;
+      user-select: none;
+    }
+
+    h1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0;
+      margin-left: 55px;
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 400;
+      user-select: none;
+    }
+  }
+
+  .head-search,
+  .head-bar,
+  .head-icon {
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  //.head-search {
+  //
+  //}
+  //
+  //.head-bar {
+  //
+  //}
+
+  .head-icon {
+    border-right: none;
+  }
+}
