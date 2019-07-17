@@ -2,6 +2,7 @@ import { Classes, Icon, Intent, ITreeNode, Position, Tooltip, Tree, InputGroup, 
 import { Button, Collapse, Pre } from "@blueprintjs/core";
 import React from "react";
 import "./Navigation.scss";
+import { IconNames } from "@blueprintjs/icons";
 
 interface INavigationProps {
 	collapsed: true | false;
@@ -20,7 +21,6 @@ interface INavigationProps {
 export interface ITreeExampleState {
     nodes: ITreeNode[];
 }
-
 
 export class Navigation extends React.Component<INavigationProps, ITreeExampleState> {
 	 // eslint-disable-next-line no-use-before-define
@@ -45,7 +45,7 @@ export class Navigation extends React.Component<INavigationProps, ITreeExampleSt
 						disabled={false}
 						leftIcon="search"
 						onChange={(val) => changeSearchNavigation(val.value)}
-						placeholder="Find tags"
+						placeholder="Find Page"
 						rightElement={
 							<Tag minimal={true}>
 								{Math.floor(10000 / Math.max(1, Math.pow(10, 2)))}
@@ -58,33 +58,36 @@ export class Navigation extends React.Component<INavigationProps, ITreeExampleSt
 					<Button 
 						onClick={() => toogleLastVisitedOpen()}
 						className={isLastVisitedOpen ? 'nav-main-button' : 'nav-main-button collapsed'}
+						rightIcon={isLastVisitedOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
 						minimal
 					>
-						{isLastVisitedOpen ? 'Close' : 'Open'} Last Visited
+						Last Visited
 					</Button>
 					<Collapse isOpen={isLastVisitedOpen}>
-						<Pre>TEST</Pre>
+						<Pre>...</Pre>
 					</Collapse>
 				</div>
 				<div>
 					<Button 
 						onClick={() => toogleFavoritesOpen()}
 						className={isFavoritesOpen ? 'nav-main-button' : 'nav-main-button collapsed'}
+						rightIcon={isFavoritesOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
 						minimal
 					>
-						{isFavoritesOpen ? 'Close' : 'Open'} Favorites
+						Favorites
 					</Button>
 					<Collapse isOpen={isFavoritesOpen}>
-						<Pre>TEST</Pre>
+						<Pre>...</Pre>
 					</Collapse>
 				</div>
 				<div>
 					<Button 
 						onClick={() => toogleNavOpen()}
 						className={isNavOpen ? 'nav-main-button' : 'nav-main-button collapsed last'}
+						rightIcon={isNavOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
 						minimal
 					>
-						{isNavOpen ? 'Close' : 'Open'} Navigation
+						Navigation
 					</Button>
 					<Collapse isOpen={isNavOpen}>
 						<Pre>

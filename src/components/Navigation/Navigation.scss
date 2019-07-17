@@ -29,6 +29,10 @@ nav {
     text-align: left;
     color: inherit;
 
+    .bp3-icon {
+      float: right;
+    }
+
     &:hover {
       box-shadow: none;
       background: none;

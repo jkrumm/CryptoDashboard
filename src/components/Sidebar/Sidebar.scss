@@ -33,11 +33,15 @@ aside.sidebar.sidebar-collapsed {
   .sidebar-nav-wrapper {
     border-left: 1px solid $dark-gray2;
   }
+
+  .sidebar-collapse-button {
+    border-left: 1px solid $dark-gray2;
+  }
 }
 
 aside.sidebar ul.sidebar-nav {
   display: block;
-  margin: -1px 0 0 0;
+  margin: 0;
   max-width: 60px;
   padding: 0;
 
@@ -90,7 +94,31 @@ aside.sidebar .sidebar-collapse-button {
   height: 60px;
 
   &:hover {
-    background-color: #384b59;
+    background-color: $menu-item;
+
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 1px;
+      z-index: 9999;
+      background-color: $menu-item-border-top;
+      width: 59px;
+      height: 1px;
+      content: "";
+    }
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 1px;
+    z-index: 9999;
+    background-color: $menu-item-border-top;
+    width: 59px;
+    height: 1px;
+    content: "";
   }
 
   .sidebar-collapse-inner {
