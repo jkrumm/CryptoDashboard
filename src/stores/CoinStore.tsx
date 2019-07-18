@@ -31,7 +31,7 @@ export class CoinStore implements ICoinStore {
 	).then(data => data.json());
 
 	const dashboard = await resDashboard
-		.filter(function(d) {
+		.filter(function(d, i) {
 			if (d.close * d.availableSupply > minMarketCap) {
 				return d;
 			}
@@ -69,7 +69,12 @@ export class CoinStore implements ICoinStore {
 				}
 			};
 		})
-		.sort(dynamicSort('-marketCap'));
+		.sort(dynamicSort('-marketCap'))
+		.filter(function(d, i) {
+			if (i <= 100) {
+				return d;
+			}
+		});
 
 		console.log(dashboard);
 		this.dashboard = dashboard;

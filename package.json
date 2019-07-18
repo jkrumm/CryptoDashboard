@@ -16,6 +16,7 @@
     "auth0-js": "^9.11.1",
     "ccxt": "^1.18.943",
     "cryptocurrencies": "^7.0.0",
+    "cryptocurrency-icons": "^0.14.0",
     "date-fns": "2.0.0-alpha.35",
     "lodash": "^4.17.11",
     "mobx": "^5.10.1",
@@ -25,8 +26,10 @@
     "numeral": "^2.0.6",
     "ololog": "^1.1.144",
     "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.8.6",
     "react-scripts": "^3.0.1",
+    "react-svg": "^10.0.11",
     "typelevel-ts": "^0.3.5",
     "typescript": "^3.5.2"
   },
@@ -39,7 +42,9 @@
     "lint": "tslint -c tslint.json 'src/**/*.tsx' && stylelint '**/*.scss' --syntax scss",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "copy-crypto-icons-png": "copyfiles -f ./node_modules/cryptocurrency-icons/32@2x/white/*.png ./public/cryptoIcons/png/icon",
+    "copy-crypto-icons-svg": "copyfiles -f ./node_modules/cryptocurrency-icons/svg/white/*.svg ./public/cryptoIcons/svg/icon"
   },
   "pre-commit": [
     "precommit-msg",

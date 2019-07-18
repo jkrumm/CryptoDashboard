@@ -7,6 +7,7 @@ import { Navigation } from "../../components/Navigation/Navigation";
 import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { ILayoutStore } from "../../stores/LayoutStore";
 import { IUserStore } from "../../stores/UserStore";
+import { Scrollbars } from 'react-custom-scrollbars';
 import { router } from "../../stores/store";
 import "./App.scss";
 
@@ -60,7 +61,9 @@ export class App extends React.Component<IContainerProps> {
 						/>
 					</div>
 					<div className="content-wrapper">
-						<MobxRouter store={router} />
+						<Scrollbars>
+							<MobxRouter store={router} />
+						</Scrollbars>
 					</div>
 					<div className="sidebar-wrapper">
 						<Sidebar

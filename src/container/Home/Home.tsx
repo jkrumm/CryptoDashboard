@@ -4,6 +4,7 @@ import React from "react";
 import { ICounterStore } from "../../stores/CounterStore";
 import { ICoinStore } from "../../stores/CoinStore";
 import { toJS } from 'mobx';
+import Marketcap from "../../components/Marketcap/Marketcap";
 
 interface IContainerProps {
 	counterStore?: ICounterStore;
@@ -25,14 +26,7 @@ export class Home extends React.Component<IContainerProps> {
 				<H3>Counter : {clickCounter}</H3>
 				<Button onClick={increment}>Increase</Button>
 				<Button onClick={decrement}>Decrease</Button>
-				<div className="dashboard">
-					{dashbaordToJS.map(
-						(item: any, index: any) => 
-							<div key={index}>
-								{item.coinId}{item.name}{item.price}
-							</div>
-					)}
-				</div>
+				<Marketcap dashboard={toJS(dashboard)}/>
 			</>
 		);
 	}

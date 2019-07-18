@@ -31,7 +31,9 @@ main.main-grid-container {
   }
 
   > .content-wrapper {
-    padding: 20px;
+    height: calc(100vh - 70px);
+    overflow-y: hidden;
+    padding: 0;
   }
 
   > .navigation-wrapper,
