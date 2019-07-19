@@ -3,7 +3,7 @@
 .header {
   display: grid;
   grid-template-areas: ". . . .";
-  grid-template-columns: 170px 300px 1fr 100px;
+  grid-template-columns: 170px 370px 1fr 100px;
   grid-template-rows: 1fr;
   position: relative;
   z-index: 100;
@@ -14,10 +14,6 @@
   > div {
     background-color: $dark-gray3;
     transition: background-color 400ms;
-
-    &:hover {
-      background-color: $dark-gray2;
-    }
   }
 
   .head-logo {
@@ -25,6 +21,10 @@
     position: relative;
     cursor: pointer;
     height: 70px;
+
+    &:hover {
+      background-color: $dark-gray2;
+    }
 
     img {
       position: relative;
@@ -46,17 +46,30 @@
     }
   }
 
-  .head-search,
   .head-bar,
   .head-icon {
     padding-top: 25px;
     text-align: center;
   }
 
-  //.head-search {
-  //
-  //}
-  //
+  .head-search {
+    padding-top: 15px;
+    padding-left: 30px;
+
+    .head-search-right {
+      position: absolute;
+      top: 9px;
+      right: 7px;
+      border-radius: 3px;
+      padding: 3px;
+
+      &:hover {
+        background-color: rgba(19,124,189, 0.3);
+        cursor: pointer;
+      }
+    }
+  }
+
   //.head-bar {
   //
   //}
