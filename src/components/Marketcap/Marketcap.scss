@@ -34,12 +34,14 @@
     .bp3-card {
       display: flex;
       margin: 5px 0;
+      cursor: pointer;
       width: calc(100% - 45px);
       height: 70px;
       padding: 0;
     }
 
     > div {
+      position: relative;
       height: 70px;
     }
   }
@@ -53,8 +55,8 @@
 
   > img {
     position: absolute;
-    top: calc(50% - 3px);
-    left: calc(50% + 4px);
+    top: calc(50% - 2px);
+    left: calc(50% + 5px);
     transform: translate(-50%, -50%);
     opacity: 0.8;
   }
@@ -105,3 +107,85 @@
   }
 }
 
+.marketcap-item-percentage-four {
+  display: flex;
+  flex-wrap: wrap;
+  width: 210px;
+  padding: 0 30px;
+
+  > div {
+    position: relative;
+    margin-right: 10px;
+    width: 70px;
+    color: $pt-intent-success;
+
+    &.red {
+      color: $pt-intent-danger;
+    }
+
+    > span {
+      position: absolute;
+      left: 0;
+      opacity: 0.75;
+      font-weight: 700;
+    }
+
+    > p {
+      text-align: right;
+      color: $pt-dark-text-color;
+    }
+
+    &:nth-of-type(1),
+    &:nth-of-type(2) {
+      margin-top: 8px;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(4) {
+      margin-right: 0;
+    }
+  }
+}
+
+.marketcap-item-ath {
+  position: relative;
+  width: 70px;
+
+  > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    text-align: center;
+  }
+}
+
+.marketcap-item-volume {
+  width: 90px;
+  padding: 0 10px;
+  padding-top: 15px;
+
+  > span {
+    display: block;
+    text-align: right;
+
+    &:last-child {
+      opacity: 0.7;
+    }
+  }
+}
+
+.marketcap-item-sparkline-week {
+  position: relative;
+  width: 220px;
+  height: 70px;
+  padding-top: 10px;
+
+  > div {
+    position: absolute;
+    top: -4px;
+    left: 10px;
+    height: 75px;
+  }
+}

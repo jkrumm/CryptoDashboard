@@ -15,10 +15,8 @@ interface IContainerProps {
 @observer
 export class Home extends React.Component<IContainerProps> {
 	render() {
-		// const { increment, decrement } = this.props.counterStore!;
-		const { dashboard, clickCounter, increment, decrement } = this.props.coinStore!;
-		const dashbaordToJS = toJS(dashboard);
-		console.log (dashbaordToJS, toJS(dashboard), clickCounter);
+		const { clickCounter, increment, decrement } = this.props.counterStore!;
+		const { dashboard } = this.props.coinStore!;
 
 		return (
 			<>

@@ -3,6 +3,7 @@ import { IconNames } from '@blueprintjs/icons';
 import React from 'react';
 import "./Sidebar.scss";
 import { SidebarNav } from './SidebarNav';
+import { SidebarContent } from './SidebarContent';
 
 interface ISidebarProps {
 	collapsed: boolean;
@@ -22,7 +23,7 @@ export function Sidebar(props: ISidebarProps) {
 	return (
 		<aside className={collapsed ? "sidebar sidebar-collapsed" : "sidebar"}>
 			<div className="sidebar-content-wrapper">
-				{sidebarTab}
+				<SidebarContent sidebarTab={sidebarTab}/>
 			</div>
 			<div className="sidebar-nav-wrapper">
 				<SidebarNav 

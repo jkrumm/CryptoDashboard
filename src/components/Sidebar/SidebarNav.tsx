@@ -50,7 +50,7 @@ function SidebarButton (props: ISidebarButtonProps) {
 			<Tooltip 
 				content={name}
 				inheritDarkTheme={true}
-				position={position ? position :  Position.TOP_LEFT}
+				position={position ? position :  Position.TOP_RIGHT}
 			>
 				<li 
 					className={active === true ? 'active' : ''}

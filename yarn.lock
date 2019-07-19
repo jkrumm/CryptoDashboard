@@ -2089,6 +2089,13 @@
     "@types/history" "*"
     "@types/react" "*"
 
+"@types/react-sparklines@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@types/react-sparklines/-/react-sparklines-1.7.0.tgz#f956d0f7b0e746ad445ce1cd250fe81f8a384684"
+  integrity sha512-Vd+cME7+Yy3kFNhnid9EBIKiyCQ/at8nqDczIs0UYfIB8AtaRJPqekigv02biOsIbQCvxyvIAIjiTKOC+hHNbA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*":
   version "16.8.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.20.tgz#4f633ecbd0a4d56d0ccc50fff6f9321bbcd7d583"
@@ -4539,15 +4546,10 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
-date-fns@*:
+date-fns@*, date-fns@^1.30.1:
   version "1.30.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
   integrity sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==
-
-date-fns@2.0.0-alpha.35:
-  version "2.0.0-alpha.35"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.35.tgz#185813cdc51b05cc1468a95116494bb3f3440934"
-  integrity sha512-dAY1ujqRtyUsa9mVeupyMzUluWo1d7kAMwyXTQHFImKYSHKvxDw/dipiY6fdswQOs8CwpGoiKysGfaaRP5r3bA==
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -10965,6 +10967,13 @@ react-scripts@^3.0.1:
     workbox-webpack-plugin "4.2.0"
   optionalDependencies:
     fsevents "2.0.6"
+
+react-sparklines@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/react-sparklines/-/react-sparklines-1.7.0.tgz#9b1d97e8c8610095eeb2ad658d2e1fcf91f91a60"
+  integrity sha512-bJFt9K4c5Z0k44G8KtxIhbG+iyxrKjBZhdW6afP+R7EnIq+iKjbWbEFISrf3WKNFsda+C46XAfnX0StS5fbDcg==
+  dependencies:
+    prop-types "^15.5.10"
 
 react-svg@^10.0.11:
   version "10.0.11"

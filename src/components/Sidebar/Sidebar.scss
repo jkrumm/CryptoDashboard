@@ -84,6 +84,15 @@ aside.sidebar ul.sidebar-nav {
   }
 }
 
+.sidebar-content {
+  .sidebar-content-header {
+    border-bottom: 1px solid $dark-gray2;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 17px;
+  }
+}
+
 aside.sidebar .sidebar-collapse-button {
   position: absolute;
   right: 0;
