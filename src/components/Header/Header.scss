@@ -3,7 +3,7 @@
 .header {
   display: grid;
   grid-template-areas: ". . . .";
-  grid-template-columns: 170px 370px 1fr 100px;
+  grid-template-columns: 170px 370px 1fr 150px;
   grid-template-rows: 1fr;
   position: relative;
   z-index: 100;
@@ -46,12 +46,6 @@
     }
   }
 
-  .head-bar,
-  .head-icon {
-    padding-top: 25px;
-    text-align: center;
-  }
-
   .head-search {
     padding-top: 15px;
     padding-left: 30px;
@@ -70,11 +64,13 @@
     }
   }
 
-  //.head-bar {
-  //
-  //}
+  .head-bar {
+    padding-top: 25px;
+    text-align: center;
+  }
 
   .head-icon {
     border-right: none;
+    padding-top: 15px;
   }
 }

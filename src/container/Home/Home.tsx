@@ -5,6 +5,8 @@ import { ICounterStore } from "../../stores/CounterStore";
 import { ICoinStore } from "../../stores/CoinStore";
 import { toJS } from 'mobx';
 import Marketcap from "../../components/Marketcap/Marketcap";
+// import CardChart from "../../charts/CardChart";
+import marketCap from "../../utils/CoinAPI/marketCap";
 
 interface IContainerProps {
 	counterStore?: ICounterStore;
@@ -17,10 +19,12 @@ export class Home extends React.Component<IContainerProps> {
 	render() {
 		const { clickCounter, increment, decrement } = this.props.counterStore!;
 		const { dashboard } = this.props.coinStore!;
+		const resMarketCap = marketCap(365);
 
 		return (
 			<>
 				<H1>Home</H1>
+				{/* <CardChart data={resMarketCap} /> */}
 				<H3>Counter : {clickCounter}</H3>
 				<Button onClick={increment}>Increase</Button>
 				<Button onClick={decrement}>Decrease</Button>

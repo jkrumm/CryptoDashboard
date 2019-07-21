@@ -1,4 +1,4 @@
-import { nomicsKey } from '../../config';
+import { nomicsKey } from "../../config/config";
 import format from 'date-fns/format';
 import subDays from 'date-fns/sub_days';
 

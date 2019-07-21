@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 // MobX Router
 import { Provider } from "mobx-react";
@@ -7,7 +9,7 @@ import { startRouter } from "mobx-router";
 import { routes } from "./config/routes";
 import { store } from "./stores/store";
 
-import { App } from "./container/App/App";
+import App from "./container/App/App";
 import * as serviceWorker from "./utils/serviceWorker";
 
 // BlueprintJS
@@ -19,13 +21,23 @@ import "@blueprintjs/select/lib/css/blueprint-select.css";
 import "@blueprintjs/table/lib/css/table.css";
 import "normalize.css/normalize.css";
 import "./styles/index.scss";
+import { Auth } from "./utils/Auth";
 
 startRouter(routes, store);
 
+const auth = new Auth();
+
 ReactDOM.render(
-	<Provider {...store}>
-		<App />
-	</Provider>,
+	//  <Router>
+	// 	<Provider {...store}>
+	// 		<App />
+	// 	</Provider>
+	// </Router>,
+	<BrowserRouter>
+		<Provider {...store}>
+    	<App auth={auth} />
+		</Provider>
+  </BrowserRouter>,
 	document.getElementById("root"),
 );
 
