@@ -1,7 +1,6 @@
 /* tslint:disable */
 import { Classes } from "@blueprintjs/core";
 import { inject, observer } from "mobx-react";
-// import { MobxRouter } from "mobx-router";
 import React from "react";
 import { Header } from "../../components/Header/Header";
 import { Navigation } from "../../components/Navigation/Navigation";
@@ -9,12 +8,10 @@ import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { ILayoutStore } from "../../stores/LayoutStore";
 import { IUserStore } from "../../stores/UserStore";
 import { Scrollbars } from 'react-custom-scrollbars';
-// import { router } from "../../stores/store";
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import "./App.scss";
-import { Auth } from "../../utils/Auth";
-import { Redirect, withRouter, Switch, RouteComponentProps } from "react-router";
-import Callback from "../../utils/Callback";
+import { withRouter, RouteComponentProps } from "react-router";
+
 
 // const auth = new Auth();
 
@@ -275,9 +272,6 @@ class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
 					<div className="content-wrapper">
 						<Scrollbars>
 							<div className="App">
-							<Route exact path='/callback' render={() => (
-								<Callback auth={this.props.auth}/>
-							)}/>
 							<Route exact path='/' render={() => (
 								<HomePage
 									authenticated={authenticated}
@@ -286,7 +280,6 @@ class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
 								/>)
 							}/>
 						</div>
-							{/* <MobxRouter store={router} /> */}
 						</Scrollbars>
 					</div>
 					<div className="sidebar-wrapper">

@@ -6,7 +6,7 @@ import { ICoinStore } from "../../stores/CoinStore";
 import { toJS } from 'mobx';
 import {Marketcap} from "../../components/Marketcap/Marketcap";
 // import CardChart from "../../charts/CardChart";
-import marketCap from "../../utils/CoinAPI/marketCap";
+// import marketCap from "../../utils/CoinAPI/marketCap";
 
 interface IContainerProps {
 	counterStore?: ICounterStore;
