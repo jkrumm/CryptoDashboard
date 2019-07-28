@@ -7,10 +7,11 @@ import { IconNames } from "@blueprintjs/icons";
 interface IContainerProps {
 	x: string;
 	auth: any;
+	history: any;
 }
 
 export function Header(props: IContainerProps) {
-	const {x, auth} = props;
+	const {x, auth, history} = props;
 
 	return (
 		<div className="header">	
@@ -20,7 +21,7 @@ export function Header(props: IContainerProps) {
 			</div>
 			<div className="head-search">
 				<InputGroup
-					large
+					large={true}
 					leftIcon={IconNames.SEARCH}
 					rightElement={
 						<Icon className="head-search-right" icon={IconNames.CROSS} />
@@ -32,17 +33,25 @@ export function Header(props: IContainerProps) {
 				{/* {x} */}
 				{ auth.isAuthenticated()
 				? 
-					<div>SUCCESS</div>
+					<div>
+						<Button 
+							large={true}
+							intent={"danger"}
+							onClick={() => auth.logout(history)}
+						>
+							Logout
+						</Button>
+					</div>
 				:
 					<ButtonGroup>
 						<Button 
-							large
-							onClick={auth.login}
+							large={true}
+							onClick={() => auth.login(history)}
 						>
 							Login
 						</Button>
 						<Button 
-							large
+							large={true}
 							intent={"success"}
 						>
 							SignUp

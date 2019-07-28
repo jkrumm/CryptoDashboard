@@ -5,14 +5,14 @@ export interface ILayoutStore {
 	navCollapsed: boolean;
 	sidebarCollapsed: boolean;
 	sidebarTab: string;
-	toogleSidebarCollapse(): void;
-	toogleNavCollapse(): void;
-	changeSidebarTab(tab: string): void;
 	searchNavigation: string;
-	changeSearchNavigation(val: string): void;
 	isLastVisitedOpen: boolean;
 	isFavoritesOpen: boolean;
 	isNavOpen: boolean;
+	toogleSidebarCollapse(): void;
+	toogleNavCollapse(): void;
+	changeSidebarTab(tab: string): void;
+	changeSearchNavigation(val: string): void;
 	toogleLastVisitedOpen(): void;
 	toogleFavoritesOpen(): void;
 	toogleNavOpen(): void;

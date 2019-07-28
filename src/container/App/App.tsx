@@ -251,7 +251,11 @@ class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
 		return (
 			<div className={`${Classes.DARK} app`}>
 				<header className="header-wrapper">
-					<Header x={name} auth={this.props.auth}/>
+					<Header 
+						x={name}
+						auth={this.props.auth}
+						history={this.props.history}
+					/>
 				</header>
 				<main className={"main-grid-container " + mainGrid}>
 					<div className="navigation-wrapper">

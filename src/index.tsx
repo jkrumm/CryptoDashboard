@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 // import { BrowserRouter as Router, Route, Link, BrowserRouter } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
+
 // MobX Router
 import { Provider } from "mobx-react";
 import { startRouter } from "mobx-router";
@@ -35,9 +36,9 @@ ReactDOM.render(
 	// </Router>,
 	<BrowserRouter>
 		<Provider {...store}>
-    	<App auth={auth} />
+			<App auth={auth} />
 		</Provider>
-  </BrowserRouter>,
+	</BrowserRouter>,
 	document.getElementById("root"),
 );
 

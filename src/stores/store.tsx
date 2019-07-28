@@ -1,3 +1,4 @@
+/* tslint:disable object-literal-sort-keys */
 import { RouterStore } from "mobx-router";
 import { CounterStore } from "./CounterStore";
 import { CoinStore } from "./CoinStore";

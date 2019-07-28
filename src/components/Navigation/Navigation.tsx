@@ -1,25 +1,24 @@
-import { Classes, Icon, Intent, ITreeNode, Position, Tooltip, Tree, InputGroup, Tag } from "@blueprintjs/core";
-import { Button, Collapse, Pre } from "@blueprintjs/core";
+import { Classes, Icon, Intent, ITreeNode, Position, Tooltip, Tree, InputGroup, Tag, Button, Collapse, Pre } from "@blueprintjs/core";
 import React from "react";
 import "./Navigation.scss";
 import { IconNames } from "@blueprintjs/icons";
 
 interface INavigationProps {
 	collapsed: true | false;
-	toogleCollapse(): void;
 	isOpen?: boolean;
 	searchNavigation: string;
-	changeSearchNavigation(val: string): void;
 	isLastVisitedOpen: boolean;
 	isFavoritesOpen: boolean;
 	isNavOpen: boolean;
+	toogleCollapse(): void;
+	changeSearchNavigation(val: string): void;
 	toogleLastVisitedOpen(): void;
 	toogleFavoritesOpen(): void;
 	toogleNavOpen(): void;
 }
 
 export interface ITreeExampleState {
-    nodes: ITreeNode[];
+		nodes: ITreeNode[];
 }
 
 export class Navigation extends React.Component<INavigationProps, ITreeExampleState> {
@@ -56,10 +55,10 @@ export class Navigation extends React.Component<INavigationProps, ITreeExampleSt
 				</div>
 				<div>
 					<Button 
-						onClick={() => toogleLastVisitedOpen()}
+						onClick={toogleLastVisitedOpen}
 						className={isLastVisitedOpen ? 'nav-main-button' : 'nav-main-button collapsed'}
 						rightIcon={isLastVisitedOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
-						minimal
+						minimal={true}
 					>
 						Last Visited
 					</Button>
@@ -69,10 +68,10 @@ export class Navigation extends React.Component<INavigationProps, ITreeExampleSt
 				</div>
 				<div>
 					<Button 
-						onClick={() => toogleFavoritesOpen()}
+						onClick={toogleFavoritesOpen}
 						className={isFavoritesOpen ? 'nav-main-button' : 'nav-main-button collapsed'}
 						rightIcon={isFavoritesOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
-						minimal
+						minimal={true}
 					>
 						Favorites
 					</Button>
@@ -82,10 +81,10 @@ export class Navigation extends React.Component<INavigationProps, ITreeExampleSt
 				</div>
 				<div>
 					<Button 
-						onClick={() => toogleNavOpen()}
+						onClick={toogleNavOpen}
 						className={isNavOpen ? 'nav-main-button' : 'nav-main-button collapsed last'}
 						rightIcon={isNavOpen ? IconNames.CHEVRON_UP : IconNames.CHEVRON_DOWN}
-						minimal
+						minimal={true}
 					>
 						Navigation
 					</Button>

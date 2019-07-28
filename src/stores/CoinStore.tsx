@@ -1,3 +1,4 @@
+/* tslint:disable object-literal-sort-keys */
 import { nomicsKey, minMarketCap } from '../config/config';
 import { action, observable, autorun } from "mobx";
 import dynamicSort from '../utils/arrayOfObjectSort';
@@ -9,35 +10,27 @@ import _ from 'lodash';
 export interface ICoinStore {
 	clickCounter: number;
 	dashboard: any;
+	autorunGO: any;
 	increment(): void;
-  decrement(): void;
-  autorunGO: any;
+	decrement(): void;
 }
 
 export class CoinStore implements ICoinStore {
 	@observable clickCounter = 0;
 	@observable dashboard = [];
 
-	@action.bound increment() {
-		this.clickCounter++;
-	}
-
-	@action.bound decrement() {
-		this.clickCounter--;
-	}
-
-  autorunGO = autorun(async () => {
+	autorunGO = autorun(async () => {
 	const resDashboard = await fetch(
 		`https://api.nomics.com/v1/dashboard?key=${nomicsKey}`
 	).then(data => data.json());
 
 	const subDateWeek1 = format(subDays(new Date(), 33), "YYYY-MM-DD");
-	var resSparklineWeek = await fetch(
+	const resSparklineWeek = await fetch(
 		`https://cors-anywhere.herokuapp.com/https://api.nomics.com/v1/currencies/sparkline?key=${nomicsKey}&start=${subDateWeek1}T00%3A00%3A00Z`
 	).then(data => data.json());
 	
 	const dashboard = await resDashboard
-		.filter(function(d, i) {
+		.filter((d, i) => {
 			if (d.close * d.availableSupply > minMarketCap) {
 				return d;
 			}
@@ -52,12 +45,12 @@ export class CoinStore implements ICoinStore {
 				Numeral(d.monthVolume / 30 / volume).format(' 0.00 %')._value;
 			return {
 				coinId: d.currency,
+				marketCap: d.close * d.availableSupply,
+				maxSupply: d.maxSupply,
 				name: cryptocurrencies[d.currency],
 				price: d.close,
-				marketCap: d.close * d.availableSupply,
 				supply: d.availableSupply,
-				maxSupply: d.maxSupply,
-				sparklineWeek: sparklineWeek,
+				sparklineWeek,
 				volume: {
 					day: d.dayVolume,
 					dayToMonth: percentageToMonth(d.dayVolume),
@@ -81,7 +74,7 @@ export class CoinStore implements ICoinStore {
 			};
 		})
 		.sort(dynamicSort('-marketCap'))
-		.filter(function(d, i) {
+		.filter((d, i) => {
 			if (i <= 100) {
 				return d;
 			}
@@ -91,4 +84,12 @@ export class CoinStore implements ICoinStore {
 		// console.log(dashboard);
 		this.dashboard = dashboard;
 	});
+
+	@action.bound increment() {
+		this.clickCounter++;
+	}
+
+	@action.bound decrement() {
+		this.clickCounter--;
+	}
 }

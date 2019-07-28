@@ -4,7 +4,7 @@ import React from "react";
 import { ICounterStore } from "../../stores/CounterStore";
 import { ICoinStore } from "../../stores/CoinStore";
 import { toJS } from 'mobx';
-import Marketcap from "../../components/Marketcap/Marketcap";
+import {Marketcap} from "../../components/Marketcap/Marketcap";
 // import CardChart from "../../charts/CardChart";
 import marketCap from "../../utils/CoinAPI/marketCap";
 
@@ -19,7 +19,7 @@ export class Home extends React.Component<IContainerProps> {
 	render() {
 		const { clickCounter, increment, decrement } = this.props.counterStore!;
 		const { dashboard } = this.props.coinStore!;
-		const resMarketCap = marketCap(365);
+		// const resMarketCap = marketCap(365);
 
 		return (
 			<>
