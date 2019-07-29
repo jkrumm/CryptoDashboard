@@ -4,6 +4,7 @@ import logo from "../../static/img/palantir-logo.svg";
 import { H1, InputGroup, Icon, ButtonGroup, Button, Overlay, Intent, Classes, Card, Elevation, Tabs, Tab, H2 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
 import LoginForm from '../../forms/loginForm';
+import SignUpForm from '../../forms/signupForm';
 
 interface IContainerProps {
 	auth: any;
@@ -14,10 +15,6 @@ export class Header extends Component<IContainerProps> {
 		isOpen: false,
 		loginTab: 'login'
 	}
-
-	// componentWillMount() {
-	// 	this.setState({isOpen: false})
-	// }
 
 	public render () {
 		const {auth} = this.props;
@@ -95,7 +92,7 @@ export class Header extends Component<IContainerProps> {
 								<Tab
 										id='SignUp'
 										// disabled={loginTab}
-										title={<H2>Sign Up</H2>}
+										title={<H2>SignUp</H2>}
 										panel={<SignUp/>}
 								/>
 							</Tabs>
@@ -117,13 +114,13 @@ export class Header extends Component<IContainerProps> {
 function Login(closeOverlay: any) {
 	return (
 		<div>
-			<LoginForm closeOverlay={closeOverlay} />
+			<LoginForm />
 		</div>
 	)
 }
 
 function SignUp() {
 	return (
-		<div>SignUp</div>
+		<SignUpForm />
 	)
 }

@@ -195,10 +195,11 @@ function HomePage(props) {
   }
 
   return (
-    <div>
-      <h1>I don't know you. Please, log in.</h1>
-      <button onClick={props.auth.login}>Log in</button>
-    </div>
+		<Home />
+    // <div>
+    //   <h1>I don't know you. Please, log in.</h1>
+    //   <button onClick={props.auth.login}>Log in</button>
+    // </div>
   );
 }
 

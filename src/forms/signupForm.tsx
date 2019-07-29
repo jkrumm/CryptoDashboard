@@ -3,10 +3,15 @@ import React from 'react';
 import MobxReactForm from 'mobx-react-form';
 import { plugins } from './validator'
 import { observer } from 'mobx-react';
-import { FormGroup, ButtonGroup, Button } from '@blueprintjs/core';
+import { FormGroup, ButtonGroup, Button, Divider } from '@blueprintjs/core';
 import { auth } from "../index";
 
 const fields = [{
+  name: 'username',
+  label: 'Username',
+  placeholder: 'Insert Username',
+  rules: 'required|string|between:3,25',
+},{
   name: 'email',
   label: 'Email',
   placeholder: 'Insert Email',
@@ -16,11 +21,16 @@ const fields = [{
   label: 'Password',
   placeholder: 'Insert Password',
   rules: 'required|string|between:5,25',
+}, {
+  name: 'password-repeat',
+  label: 'Repeat Password',
+  placeholder: 'Insert Password',
+  rules: 'required|string|between:5,25|same:password',
 }];
 
 const hooks = {
   onSubmit(form) {
-    auth.login()
+    // auth.login()
   },
   onSuccess(form) {
     // alert('Form is valid! Send the request here.');
@@ -37,41 +47,53 @@ const hooks = {
 const form = new MobxReactForm({ fields }, { plugins, hooks });
 
 @observer
-class LoginForm extends React.Component {
+class SignUpForm extends React.Component {
   render() {
     return (
       <form>
         <FormGroup
+          label={form.$('username').label}
+          labelFor={form.$('username').id}
+          helperText={form.$('username').error}
+        >
+          <input 
+            className={form.$('username').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
+            {...form.$('username').bind()}
+          />
+        </FormGroup>
+        <FormGroup
           label={form.$('email').label}
           labelFor={form.$('email').id}
           helperText={form.$('email').error}
+          style={{marginBottom: "25px",}}
         >
           <input 
             className={form.$('email').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
             {...form.$('email').bind()}
           />
         </FormGroup>
+        <Divider/>
         <FormGroup
           label={form.$('password').label}
           labelFor={form.$('password').id}
           helperText={form.$('password').error}
+          style={{marginTop: "20px",}}
         >
           <input
             className={form.$('password').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
             {...form.$('password').bind({ type: 'password' })}
           />
         </FormGroup>
-        {/* <label htmlFor={form.$('email').id}>
-          {form.$('email').label}
-        </label>
-        <input {...form.$('email').bind()} />
-        <p>{form.$('email').error}</p> */}
-
-        {/* <label htmlFor={form.$('password').id}>
-          {form.$('password').label}
-        </label> */}
-        
-        {/* <p>{form.$('password').error}</p> */}
+        <FormGroup
+          label={form.$('password-repeat').label}
+          labelFor={form.$('password-repeat').id}
+          helperText={form.$('password-repeat').error}
+        >
+          <input
+            className={form.$('password-repeat').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
+            {...form.$('password-repeat').bind({ type: 'password-repeat' })}
+          />
+        </FormGroup>
 
 	      <ButtonGroup fill large>
           <Button
@@ -84,13 +106,9 @@ class LoginForm extends React.Component {
             // intent={Intent.SUCCESS}
             // onClick={form.onSubmit}
           >
-            Login
+            SignUp
           </Button>
         </ButtonGroup>
-
-        {/* <button type="submit" onClick={form.onSubmit}>Submit</button>
-        <button type="button" onClick={form.onReset}>Reset</button>
-        <button type="button" onClick={form.onClear}>Clear</button> */}
 
         <p>{form.error}</p>
       </form>
@@ -98,4 +116,4 @@ class LoginForm extends React.Component {
   }
 };
 
-export default LoginForm;
+export default SignUpForm;
