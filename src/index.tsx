@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-
+import { Router } from "react-router-dom";
+import history from './utils/history';
 
 // MobX Router
 import { Provider } from "mobx-react";
@@ -22,19 +22,14 @@ import "normalize.css/normalize.css";
 import "./styles/index.scss";
 import { Auth } from "./utils/Auth";
 
-const auth = new Auth();
+export const auth = new Auth();
 
 ReactDOM.render(
-	//  <Router>
-	// 	<Provider {...store}>
-	// 		<App />
-	// 	</Provider>
-	// </Router>,
-	<BrowserRouter>
+	<Router history={history}>
 		<Provider {...store}>
 			<App auth={auth} />
 		</Provider>
-	</BrowserRouter>,
+	</Router>,
 	document.getElementById("root"),
 );
 

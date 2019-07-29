@@ -8,9 +8,10 @@ import { Sidebar } from "../../components/Sidebar/Sidebar";
 import { ILayoutStore } from "../../stores/LayoutStore";
 import { IUserStore } from "../../stores/UserStore";
 import { Scrollbars } from 'react-custom-scrollbars';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import "./App.scss";
 import { withRouter, RouteComponentProps } from "react-router";
+import { Home } from "../../container/Home/Home"
 
 
 // const auth = new Auth();
@@ -185,20 +186,11 @@ import { withRouter, RouteComponentProps } from "react-router";
 // Auth0 Protected
 
 function HomePage(props) {
-  const {authenticated} = props;
-
-  const logout = () => {
-    props.auth.logout();
-    props.history.push('/');
-	};
-
+	const {authenticated} = props;
+	
   if (authenticated) {
-    const {name} = props.auth.getProfile();
     return (
-      <div>
-        <h1>Howdy! Glad to see you back, {name}.</h1>
-        <button onClick={logout}>Log out</button>
-      </div>
+      <Home />
     );
   }
 
@@ -219,9 +211,6 @@ interface IContainerProps {
 @inject("layoutStore", "userStore")
 @observer
 class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
-	// componentDidUpdate() {
-	// 	auth.handleAuthentication();
-	// }
 	public render() {
 		const {
 			navCollapsed,
@@ -241,17 +230,13 @@ class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
 			toogleNavOpen
 		} = this.props.layoutStore;
 
-		const { name } = this.props.userStore;
-
 		const authenticated = this.props.auth.isAuthenticated();
 			
 		return (
 			<div className={`${Classes.DARK} app`}>
 				<header className="header-wrapper">
-					<Header 
-						x={name}
+					<Header
 						auth={this.props.auth}
-						history={this.props.history}
 					/>
 				</header>
 				<main className={"main-grid-container " + mainGrid}>

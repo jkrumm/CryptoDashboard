@@ -3747,9 +3747,9 @@ ccount@^1.0.0, ccount@^1.0.3:
   integrity sha512-fpZ81yYfzentuieinmGnphk0pLkOTMm6MZdVqwd77ROvhko6iujLNGrHH5E7utq3ygWklwfmwuG+A7P+NpqT6w==
 
 ccxt@^1.18.990:
-  version "1.18.990"
-  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.18.990.tgz#bd99f55fb2d5638a77050162478bdbd3113cfd00"
-  integrity sha512-lObj8ZyhV/X2gEE/6GOIaQmYPoMTUuFwfFgF3PBZ2in+kFN+Zo7yBQnV5M6nheRBOcXj0O6xVgwdGsTfFQnw8g==
+  version "1.18.991"
+  resolved "https://registry.yarnpkg.com/ccxt/-/ccxt-1.18.991.tgz#a9e7db812f943d394522db79586ffd115243b516"
+  integrity sha512-WOtMpX1RBigBxEhjM/EGNjD3b6z9ZyLdttRVqmCP6RRCpW7M+22fzw3g2+esE/8857Nl9d2Hc2bHI3u+xy+nuQ==
 
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
@@ -8756,6 +8756,13 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+mobx-react-form@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/mobx-react-form/-/mobx-react-form-2.0.4.tgz#4b1df818340d9c34952658ae3788beabf45befde"
+  integrity sha512-P5o49jDq6wQcYv8uIXI/Yva2+BPs4XLqi89huw3InBD/JFCpujp7eqB9dgwYkh6pX76FZvWIK4jEqy1V04ENwQ==
+  dependencies:
+    lodash "^4.17.11"
+
 mobx-react-lite@1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-1.4.0.tgz#193beb5fdddf17ae61542f65ff951d84db402351"
@@ -13531,6 +13538,11 @@ validate-npm-package-license@^3.0.1:
   dependencies:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
+
+validatorjs@^3.15.1:
+  version "3.15.1"
+  resolved "https://registry.yarnpkg.com/validatorjs/-/validatorjs-3.15.1.tgz#e674b6330c1432913a81128cdb7ff679463d4d2d"
+  integrity sha512-9hJWC4sYaEjf3a6MPKrERzRU69btS/pDy+t5IX8pRFqkI8UI2qj8nR3n2XlVzxRZMQGrf6HrtfDkoRcJavkLlg==
 
 value-equal@^0.4.0:
   version "0.4.0"

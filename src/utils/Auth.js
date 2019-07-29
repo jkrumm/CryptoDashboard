@@ -1,10 +1,11 @@
 /* tslin:disbale no-restricted-globals */
 import axios from 'axios';
+import history from "../utils/history";
 // const LOGIN_SUCCESS_PAGE = "/";
 // const LOGIN_FAILURE_PAGE = "/";
 
 export class Auth {
-  login(history) {
+  login() {
     axios.post('http://localhost:7001/auth/login',{
         email: 'jokrumm@gmail.com',
         password: 'test123456'
@@ -34,7 +35,7 @@ export class Auth {
   }
 
   // removes user details from localStorage
-  logout(history) {
+  logout() {
     // Clear access token and ID token from local storage
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
