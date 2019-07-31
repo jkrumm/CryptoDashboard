@@ -7,19 +7,35 @@ import { FormGroup, ButtonGroup, Button } from '@blueprintjs/core';
 import { auth } from "../index";
 
 const fields = [{
-  name: 'username-email',
-  label: 'Username or Email',
-  placeholder: 'Insert Username or Email',
-  rules: 'required|string|max:50',
+  name: 'title',
+  label: 'Title',
+  placeholder: 'Insert Title',
+  rules: 'required|string|between:1,50',
 }, {
-  name: 'password',
-  label: 'Password',
-  placeholder: 'Insert Password',
-  rules: 'required|string|between:5,64',
-  options: {
-    validateOnChange: true,
-  },
+  name: 'desc',
+  label: 'Description',
+  placeholder: 'Insert Description',
+  rules: 'string',
+}, {
+  name: 'group',
+  // type: 'radio',
+  label: 'Test',
+  rules: 'required',
+  default: 'none'
+}, {
+  name: 'date',
+  // type: 'radio',
+  label: 'Date',
 }];
+
+// , {
+//   value: true,
+//   type: 'checkbox',
+//   label: 'Accept Terms',
+//   rules: 'boolean|accepted',
+//   options: {
+//     validateOnChange: true,
+//   },
 
 const hooks = {
   onSubmit(form) {
@@ -45,49 +61,49 @@ class LoginForm extends React.Component {
     return (
       <form>
         <FormGroup
-          label={form.$('username-email').label}
-          labelFor={form.$('username-email').id}
-          helperText={form.$('username-email').error}
+          label={form.$('title').label}
+          labelFor={form.$('title').id}
+          helperText={form.$('title').error}
         >
           <input 
-            className={form.$('username-email').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
-            {...form.$('username-email').bind()}
+            className={form.$('title').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
+            {...form.$('title').bind()}
           />
         </FormGroup>
         <FormGroup
-          label={form.$('password').label}
-          labelFor={form.$('password').id}
-          helperText={form.$('password').error}
+          label={form.$('desc').label}
+          labelFor={form.$('desc').id}
+          helperText={form.$('desc').error}
         >
           <input
-            className={form.$('password').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
-            {...form.$('password').bind({ type: 'password' })}
+            className={form.$('desc').error ? "bp3-input bp3-fill bp3-intent-danger" : "bp3-input bp3-fill"} 
+            {...form.$('desc').bind({ type: 'desc' })}
           />
         </FormGroup>
-        {/* <label htmlFor={form.$('email').id}>
-          {form.$('email').label}
-        </label>
-        <input {...form.$('email').bind()} />
-        <p>{form.$('email').error}</p> */}
-
-        {/* <label htmlFor={form.$('password').id}>
-          {form.$('password').label}
-        </label> */}
-        
-        {/* <p>{form.$('password').error}</p> */}
-
-	      <ButtonGroup fill large>
+        <ButtonGroup fill>
           <Button
             onClick={form.onClear}
           >
-            Clear
+            Buy
           </Button>
           <Button
             onClick={form.onSubmit}
             // intent={Intent.SUCCESS}
             // onClick={form.onSubmit}
           >
-            Login
+            Sell
+          </Button>
+          <Button
+            onClick={form.onClear}
+          >
+            X
+          </Button>
+          <Button
+            onClick={form.onSubmit}
+            // intent={Intent.SUCCESS}
+            // onClick={form.onSubmit}
+          >
+            J
           </Button>
         </ButtonGroup>
 

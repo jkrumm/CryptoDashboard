@@ -1,16 +1,16 @@
 /* stylelint disable max-line-length */
 @import "../../styles/variables";
 
-.marketcap {
+.marketcap-big {
   display: block;
   width: 100%;
   padding-top: 20px;
 }
 
-.marketcap-list {
+.marketcap-big-list {
   display: block;
 
-  .marketcap-list-line {
+  .marketcap-big-list-line {
     display: flex;
     height: 80px;
     // box-shadow: "0 0 0 1px rgba(16, 22, 26, 0.2), 0 0 0 rgba(16, 22, 26, 0), 0 1px 1px rgba(16, 22, 26, 0.4)";
@@ -47,7 +47,7 @@
   }
 }
 
-.marketcap-item-icon {
+.marketcap-big-item-icon {
   position: relative;
   width: 35px;
   height: 70px;
@@ -62,7 +62,7 @@
   }
 }
 
-.marketcap-item-name {
+.marketcap-big-item-name {
   width: 100px;
   padding-left: 10px;
 
@@ -85,8 +85,8 @@
   }
 }
 
-.marketcap-item-price,
-.marketcap-item-cap {
+.marketcap-big-item-price,
+.marketcap-big-item-cap {
   position: relative;
   width: 100px;
   text-align: right;
@@ -101,13 +101,13 @@
   }
 }
 
-.marketcap-item-cap {
+.marketcap-big-item-cap {
   > span {
     font-size: 16px;
   }
 }
 
-.marketcap-item-percentage-four {
+.marketcap-big-item-percentage-four {
   display: flex;
   flex-wrap: wrap;
   width: 220px;
@@ -153,7 +153,7 @@
   }
 }
 
-.marketcap-item-ath {
+.marketcap-big-item-ath {
   position: relative;
   width: 70px;
 
@@ -167,7 +167,7 @@
   }
 }
 
-.marketcap-item-volume {
+.marketcap-big-item-volume {
   width: 90px;
   padding: 0 10px;
   padding-top: 15px;
@@ -182,7 +182,7 @@
   }
 }
 
-.marketcap-item-sparkline-week {
+.marketcap-big-item-sparkline-week {
   position: relative;
   width: 220px;
   height: 70px;
@@ -196,7 +196,7 @@
   }
 }
 
-.marketcap-list-collapse {
+.marketcap-big-list-collapse {
   pre {
     display: block;
     border-radius: 0;

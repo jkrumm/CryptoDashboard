@@ -48,10 +48,11 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 | Name               	| URL                                      	|
 |--------------------	|------------------------------------------	|
 | BlueprintJS Docs   	| https://blueprintjs.com/docs/            	|
-| CCXT                 	| https://github.com/ccxt/ccxt/wiki/Manual  |
+| CCXT                | https://github.com/ccxt/ccxt/wiki/Manual  |
 | MobX Router        	| https://github.com/kitze/mobx-router     	|
 | MobX React         	| https://github.com/mobxjs/mobx-react     	|
 | Lodash Cheatsheet  	| https://devhints.io/lodash               	|
 | Lodash Docs        	| https://lodash.com/docs/4.17.11          	|
 | Date-FNS Docs      	| https://date-fns.org/v1.30.1/docs/format 	|
+| MobX React Form Docs| https://foxhound87.github.io/mobx-react-form/|
 | RethinkDB Explorer 	| http://localhost:8080/#dataexplorer      	|

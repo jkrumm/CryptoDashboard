@@ -12,6 +12,7 @@ import { Route } from 'react-router-dom';
 import "./App.scss";
 import { withRouter, RouteComponentProps } from "react-router";
 import { Home } from "../../container/Home/Home"
+import { MarketcapBig } from "../MartketcapBig/MarketcapBig";
 
 
 // const auth = new Auth();
@@ -265,6 +266,9 @@ class App extends React.Component<IContainerProps & RouteComponentProps<any>> {
 									history={this.props.history}
 								/>)
 							}/>
+							<Route exact path='/marketcap' render={() => (
+								<MarketcapBig/>
+							)}/>
 						</div>
 						</Scrollbars>
 					</div>
