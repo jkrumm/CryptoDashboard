@@ -11,7 +11,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { Route } from 'react-router-dom';
 import "./App.scss";
 import { withRouter, RouteComponentProps } from "react-router";
-import { Home } from "../../container/Home/Home"
+import { Home } from "../../container/Home/Home";
 import { MarketcapBig } from "../MartketcapBig/MarketcapBig";
 
 
