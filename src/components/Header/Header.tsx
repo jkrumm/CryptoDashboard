@@ -3,8 +3,8 @@ import "./Header.scss";
 import logo from "../../static/img/palantir-logo.svg";
 import { H1, InputGroup, Icon, ButtonGroup, Button, Overlay, Intent, Classes, Card, Elevation, Tabs, Tab, H2 } from "@blueprintjs/core";
 import { IconNames } from "@blueprintjs/icons";
-import LoginForm from '../../forms/loginForm';
-import SignUpForm from '../../forms/signupForm';
+import LoginForm from '../../forms/login.form';
+import SignUpForm from '../../forms/signup.form';
 
 interface IContainerProps {
 	auth: any;

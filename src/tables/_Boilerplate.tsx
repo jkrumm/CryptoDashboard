@@ -70,7 +70,8 @@ export class BoilerplateTable extends React.Component<{}, IMarketcapTableState> 
 					columns={columns}
 					defaultPageSize={50}
 					className="-striped -highlight"
-					SubComponent={row => {
+					// SubComponent={row => {
+					SubComponent={() => {
 						return (
 							<div style={{ padding: "20px", }}>
 								<em>
@@ -84,7 +85,8 @@ export class BoilerplateTable extends React.Component<{}, IMarketcapTableState> 
 									columns={columns}
 									defaultPageSize={3}
 									showPagination={false}
-									SubComponent={row => {
+									// SubComponent={row => {
+									SubComponent={() => {
 										return (
 											<div style={{ padding: "20px", }}>
 												Another Sub Component!

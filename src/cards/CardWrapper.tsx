@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import "./CardWrapper.scss";
+import "./Card.scss";
 import { Tab, Tabs, Card, H4 } from "@blueprintjs/core";
 
 interface ICardWrapperProps {
-	tabs: boolean
+	tabs: boolean;
 	rows: boolean;
-	spaceBetween: number
 	children: any;
 	heading?: any;
 }
 
 interface ICardWrapperState {
-	selectedTabId: number
+	selectedTabId: number;
 }
 
 export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState> {
@@ -32,7 +31,7 @@ export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState>
 	}
 
 	public render() {
-		const { tabs, rows, spaceBetween, heading, children } = this.props;
+		const { tabs, rows, heading, children } = this.props;
 
 		if (tabs) {
 			return (
@@ -60,9 +59,7 @@ export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState>
 			)
 		} else {
 			return (
-				<div className={rows ? 'card-wrapper wrap' : 'card-wrapper'}
-					data-spaceBetween={spaceBetween}
-				>
+				<div className={rows ? 'card-wrapper wrap' : 'card-wrapper'}>
 					{children}
 				</div>
 			)

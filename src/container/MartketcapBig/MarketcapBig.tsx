@@ -6,8 +6,8 @@ import { Card, Collapse, Elevation, H4, Pre, H3 } from "@blueprintjs/core";
 import { Sparklines, SparklinesLine } from 'react-sparklines';
 import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 import { inject, observer } from "mobx-react";
-import { ICounterStore } from "../../stores/CounterStore";
-import { ICoinStore } from "../../stores/CoinStore";
+import { ICounterStore } from "../../stores/Counter.store";
+import { ICoinStore } from "../../stores/Coin.store";
 
 interface IContainerProps {
 	counterStore?: ICounterStore;
