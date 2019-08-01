@@ -4,4 +4,4 @@ export { CardTab } from './CardTabWrapper';
 
 // Cards
 export { Card } from './Simple.card';
-export { CoinCardSmall } from './CoinSmall.card';
+export { ChartCardSmall } from './ChartSmall.card';

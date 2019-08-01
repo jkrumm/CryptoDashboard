@@ -61,6 +61,7 @@ export class BoilerplateTable extends React.Component<{}, IMarketcapTableState> 
 			data: makeData()
 		};
 	}
+
 	render() {
 		const { data } = this.state;
 		return (

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { createChart } from 'lightweight-charts';
 
-// interface ISmallChart {
-// 	heading: string;
+// interface ISmallChartProps {
 // }
 
 // interface ICoinCardSmallState {
@@ -11,12 +10,23 @@ import { createChart } from 'lightweight-charts';
 
 export class SmallChart extends Component {
 	chartId: string;
+	// divElement: HTMLDivElement | null;
+	divElement: any;
 	constructor(props) {
 		super(props)
+		this.state = {
+			dimensions: null,
+			height: 0,
+			width: 0
+		};
 		this.chartId = 'chart_' + Math.random().toString(36).substr(2, 9);
+		this.divElement = null;
 	}
 	componentDidMount() {
-		const chart = createChart(this.chartId, { height: 300 });
+		const height = this.divElement.clientHeight;
+		const width = this.divElement.clientWidth;
+		this.setState({ height, width });
+		const chart = createChart(this.chartId, { width, height });
 		const lineSeries = chart.addLineSeries();
 		lineSeries.setData([
 				{ time: '2019-04-11', value: 80.01 },
@@ -34,7 +44,7 @@ export class SmallChart extends Component {
 
 	render() {
 		return (
-			<div className="chart chart-small">
+			<div className="chart chart-small" ref={ (divElement) => this.divElement = divElement}>
 					<div id={this.chartId}/>
 			</div>
 		)

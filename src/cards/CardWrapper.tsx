@@ -7,6 +7,7 @@ interface ICardWrapperProps {
 	rows: boolean;
 	children: any;
 	heading?: any;
+	height?: string;
 }
 
 interface ICardWrapperState {
@@ -31,7 +32,7 @@ export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState>
 	}
 
 	public render() {
-		const { tabs, rows, heading, children } = this.props;
+		const { tabs, rows, heading, children, height } = this.props;
 
 		if (tabs) {
 			return (
@@ -47,7 +48,7 @@ export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState>
 									large={true}
 								>
 									{children.map((item, index) => (
-										<Tab id={index} title={item.props.heading} />
+										<Tab key={index} id={index} title={item.props.heading} />
 									))}
 									<Tabs.Expander />
 								</Tabs>
@@ -59,7 +60,7 @@ export class CardWrapper extends Component<ICardWrapperProps, ICardWrapperState>
 			)
 		} else {
 			return (
-				<div className={rows ? 'card-wrapper wrap' : 'card-wrapper'}>
+				<div style={{height, }} className={rows ? 'card-wrapper wrap' : 'card-wrapper'}>
 					{children}
 				</div>
 			)

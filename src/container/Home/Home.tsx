@@ -3,7 +3,7 @@ import { inject, observer } from "mobx-react";
 import React from "react";
 import { ICounterStore } from "../../stores/Counter.store";
 import { ICoinStore } from "../../stores/Coin.store";
-import {CardWrapper, Card, CardTab, CoinCardSmall} from "../../cards";
+import {CardWrapper, Card, CardTab, ChartCardSmall} from "../../cards";
 
 interface IContainerProps {
 	counterStore?: ICounterStore;
@@ -23,10 +23,10 @@ export class Home extends React.Component<IContainerProps> {
 				<H3>Counter : {clickCounter}</H3>
 				<Button onClick={increment}>Increase</Button>
 				<Button onClick={decrement}>Decrease</Button>
-				<CardWrapper tabs={false} rows={false}>
-					<CoinCardSmall heading="Card 1">1</CoinCardSmall>
-					<CoinCardSmall heading="Card 2">2</CoinCardSmall>
-					<CoinCardSmall heading="Card 3">2</CoinCardSmall>
+				<CardWrapper tabs={false} rows={false} height="400px">
+					<ChartCardSmall heading="Card 1">1</ChartCardSmall>
+					<ChartCardSmall heading="Card 2">2</ChartCardSmall>
+					<ChartCardSmall heading="Card 3">2</ChartCardSmall>
 				</CardWrapper>
 				<CardWrapper tabs={false} rows={false}>
 					<Card heading="Card 1">1</Card>
